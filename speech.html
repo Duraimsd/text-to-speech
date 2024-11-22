@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div class="msd">
+       <u> <h1>text to speech</h1></u>
+        <textarea name="" id="du" placeholder="enter your statement"></textarea><br><br>
+        <button onclick="speak()">submit</button>
+    <script>
+    var speech=new SpeechSynthesisUtterance();
+
+        function speak(){
+            var textToSpeak=document.getElementById("du").value;
+            if(textToSpeak.trim() !== ""){
+                speech.text=textToSpeak;
+                speech.rate=1;
+                speech.volume=1;
+                speech.pitch=1;
+                window.speechSynthesis.speak(speech);
+            }
+            else{
+                alert("enter some text");
+            }
+        }
+        
+    
+    </script>
+</body>
+</html>
